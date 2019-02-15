@@ -14,10 +14,10 @@ public class Airport {
     private List<? extends Plane> planes;
 
 
-
-    public List<PassengerPlane> getPasPl() {
-        List<? extends Plane> l = this.planes;
-        List<PassengerPlane> x = new ArrayList<>();
+//bad name for variables
+    public List<PassengerPlane> getPasPl() { //better getPassengersPlanes
+        List<? extends Plane> l = this.planes; //beter listOfAllPlanes
+        List<PassengerPlane> x = new ArrayList<>(); //better listOfPassengersPlanes
         for (Plane p : l) {if (p instanceof PassengerPlane) {x.add((PassengerPlane) p);}}
         return x;
     }
@@ -28,7 +28,7 @@ public class Airport {
             if (plane instanceof MilitaryPlane) {
                 militaryPlanes.add((MilitaryPlane) plane);
             } //if
-            else {
+            else { //!!!no need in else
 
             } // else
         } //for
@@ -43,15 +43,10 @@ public class Airport {
                 planeWithMaxCapacity = passengerPlanes.get(i);
             }
         }
-
-
-
-
-
-
         return planeWithMaxCapacity;
     }
-
+    
+    //incorrect way to write code
     public List<MilitaryPlane> getTransportMilitaryPlanes() {
     List<MilitaryPlane> transportMilitaryPlanes = new ArrayList<>();
     List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
@@ -64,6 +59,7 @@ public class Airport {
     return transportMilitaryPlanes;
     }
 
+    //same case as transportMilitaryPlane so they can be rewriten in one method
     public List<MilitaryPlane> getBomberMilitaryPlanes() {
         List<MilitaryPlane> bomberMilitaryPlanes = new ArrayList<>();
         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
@@ -74,8 +70,19 @@ public class Airport {
             }
         }
         return bomberMilitaryPlanes;
-
     }
+    
+    //for example
+//     public <MilitaryPlane> getMilitaryPlanesByType(MilitaryPlane type) {
+//         List<MilitaryPlane> resultListOfMilitaryPlanes = new ArrayList<>();
+//         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
+//         for (MilitaryPlane plane : militaryPlanes) {
+//             if (plane.getType().equals(type)) {
+//                 resultListOfMilitaryPlanes.add((MilitaryPlane) plane);
+//             }
+//         }
+//         return resultListOfMilitaryPlanes;
+//     }
 
     public List<experimentalPlane> getExperimentalPlanes() {
         List<experimentalPlane> experimentalPlanes = new ArrayList<>();
@@ -127,7 +134,7 @@ public class Airport {
         Iterator<? extends Plane> iterator = collection.iterator();
         while (iterator.hasNext()) {
             Plane plane = iterator.next();
-            System.out.println(plane);
+            System.out.println(plane); //?? may be it has to be plane.toString ??
         }
     }
 
