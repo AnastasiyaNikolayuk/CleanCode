@@ -6,8 +6,6 @@ import java.util.Objects;
 
 public class MilitaryPlane extends Plane{
 
-    //bad name for variable
-    //no meaning in it
     private MilitaryType type;
 
     public MilitaryPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryType type) {
@@ -35,7 +33,11 @@ public class MilitaryPlane extends Plane{
         MilitaryPlane that = (MilitaryPlane) o;
         return type == that.type;
     }
+    
+//  public boolean equals(Object o) {
+//    return super.equals(o);}
 
+    //return super.hashCode();
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), type);
