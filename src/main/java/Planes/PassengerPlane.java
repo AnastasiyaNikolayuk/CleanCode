@@ -33,6 +33,7 @@ public class PassengerPlane extends Plane{
 //                        '}');
 //    }
 
+    //a lot of conditions, incorrect return
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -41,6 +42,11 @@ public class PassengerPlane extends Plane{
         PassengerPlane plane = (PassengerPlane) o;
         return passengersCapacity == plane.passengersCapacity;
     }
+    
+    //can be rewriten
+//  public boolean equals(Object o) {
+//    return (super.equals(o));
+//  }
 
     @Override
     public int hashCode() {
