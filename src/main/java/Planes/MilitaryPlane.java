@@ -26,6 +26,7 @@ public class MilitaryPlane extends Plane{
                 '}');
     }
 
+    //incorrect return, a lot of conditions
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
