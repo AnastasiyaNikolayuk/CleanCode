@@ -6,6 +6,8 @@ import java.util.Objects;
 
 public class MilitaryPlane extends Plane{
 
+    //bad name for variable
+    //no meaning in it
     private MilitaryType type;
 
     public MilitaryPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryType type) {
